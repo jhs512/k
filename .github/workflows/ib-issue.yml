@@ -10,14 +10,12 @@ concurrency:
 
 jobs:
   ib:
-    # 리포 주인이 등록한 이슈의 제목이 'ib' 일 때만 실행
-    # edited 이벤트는 제목이 방금 'ib'로 바뀐 경우에만 허용
-    # (본문 수정이나 봇의 제목 변경으로 인한 재실행 방지)
+    # 리포 주인이 등록한 이슈의 제목이 정확히 'ib' 일 때만 실행
+    # (처리 후 봇이 제목을 'ib: ...' 로 바꾸므로 재실행되지 않음)
     if: >-
       github.event.issue.title == 'ib' &&
       github.event.issue.user.login == github.repository_owner &&
-      github.event.sender.login == github.repository_owner &&
-      (github.event.action == 'opened' || github.event.changes.title)
+      github.event.sender.login == github.repository_owner
     runs-on: ubuntu-latest
     permissions:
       contents: write
