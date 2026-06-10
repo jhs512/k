@@ -9,6 +9,7 @@
 | ID | Summary | Edges |
 |---|---|---|
 | `pillar-personal-foundation` | 신중하게 내리고 기록한 의사결정이 즉흥적인 대응보다 장기적으로 더 나은 결과를 만든다는 이 vault의 기초 원칙. | 1 |
+| `pillar-jang-causality` | 장희성의 핵심 세계관. 인과율을 믿으며, 행동의 결과는 뿌린 대로 돌아온다고 본다. 베풂과 성실함의 근거가 되는 가치 축. | 2 |
 
 ---
 
@@ -17,6 +18,10 @@
 | ID | Summary | Edges |
 |---|---|---|
 | `decision-personal-first` | 모호한 문제에 시간 압박이 있을 때는, 되돌릴 수 있는 행동을 기본값으로 선택해 추진력을 유지하면서 선택지를 보존한다. | 1 |
+| `decision-jang-security-defaults` | 스프링 시큐리티 초기 설정은 모든 요청 허용, H2 콘솔 정상 작동 보장, CSRF 전체 비활성화로 한다. | 1 |
+| `decision-jang-rest-over-thymeleaf` | 뷰 레이어는 타임리프 같은 서버사이드 템플릿보다 REST API 방식을 선호한다. | 1 |
+| `decision-jang-test-strategy` | 테스트는 H2 메모리 DB 위에서 실제 HTTP 요청을 날리고, 각 테스트 후 트랜잭션 롤백으로 상태를 초기화하는 방식을 선호한다. | 2 |
+| `decision-jang-sql-logging` | 모든 SQL은 포맷팅된 형태로 자세히 출력하고, 바인딩 파라미터와 추출 값까지 로그에 보이게 설정한다. | 1 |
 
 ---
 
@@ -34,7 +39,10 @@
 
 ## playbook
 
-*No nodes created yet.*
+| ID | Summary | Edges |
+|---|---|---|
+| `playbook-jang-springboot-setup` | 장희성의 스프링부트 프로젝트 초기 세팅 표준. yaml 설정, 최신 안정 버전, JDK 25+, Group com / Artifact back, Gradle KTS, 필수 의존성 목록 포함. | 3 |
+| `playbook-jang-springboot-profiles` | application-dev.yml은 H2 파일 모드(데이터 유지), application-test.yml은 H2 메모리 모드(휘발)로 구성한다. | 1 |
 
 ---
 
@@ -82,13 +90,18 @@
 
 ## note
 
-*No nodes created yet.*
+| ID | Summary | Edges |
+|---|---|---|
+| `note-jang-money-attitude` | 장희성은 돈 버는 것을 좋아하지만 인색하지는 않다. 베풂은 인과율 신념(뿌린 대로 거둔다)에서 비롯된다. | 2 |
+| `note-jang-tastes` | 장희성은 풋살과 한식을 좋아하고, 대중문화(연예·트렌드)에는 관심이 없다. | 1 |
 
 ---
 
 ## contact
 
-*No nodes created yet.*
+| ID | Summary | Edges |
+|---|---|---|
+| `contact-jang-heeseong` | 1986년생 한국 남성. IT 강사로 스프링부트 강의를 주력으로 한다. 이 vault의 소유자이자 모든 personal 노드의 1차 저자. | 3 |
 
 ---
 
@@ -123,4 +136,4 @@ When you create a new node:
 
 ---
 
-*Last updated: 06/10/2026*
+*Last updated: 06/10/2026 (convert-note: 장희성 프로필 10개 노드 추가)*

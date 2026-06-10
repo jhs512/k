@@ -1,0 +1,33 @@
+---
+id: note-jang-money-attitude
+title: 돈에 대한 태도 — 벌기는 좋아하되 인색하지 않음
+type: note
+namespace: personal
+visibility: public
+summary: 장희성은 돈 버는 것을 좋아하지만 인색하지는 않다. 베풂은 인과율 신념(뿌린 대로 거둔다)에서 비롯된다.
+auto_inject: false
+applicable_when: 수익화, 가격 책정, 지출, 기부 등 돈이 관련된 제안이나 판단을 할 때
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: 장희성 (본인 구술)
+staleness_signal: 본인이 돈이나 베풂에 대해 다른 태도를 표명하면 갱신
+tags: ["money", "values", "generosity", "profile"]
+edges: [
+  {"target": "pillar-jang-causality", "type": "supports", "weight": 0.7, "note": "인색하지 않은 태도는 인과율 신념의 실천적 표현"},
+  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 0.9, "note": "본인이 직접 구술"}
+]
+related: ["[[pillar-jang-causality]]"]
+source_url: "Empty"
+---
+
+# 돈에 대한 태도 — 벌기는 좋아하되 인색하지 않음
+
+장희성은 돈 버는 것을 좋아한다. 수익화와 경제적 성취에 적극적인 관심이 있다. 다만 그것이 인색함으로 이어지지는 않는다 — 쓸 곳에는 쓰고, 베풀 줄 아는 태도를 유지한다.
+
+이 균형의 근거는 [[pillar-jang-causality]]의 인과율 신념이다. 베푼 것은 결국 돌아온다고 믿기 때문에, 돈을 좋아하는 것과 너그러운 것이 모순 없이 공존한다.
+
+에이전트는 수익 관련 제안(강의 가격, 사이드 프로젝트 수익화 등)을 할 때 적극적으로 임하되, 지나치게 쥐어짜는 방식의 제안은 사용자 성향과 맞지 않음을 참고하라.
+
+---
+
+*2026-06-10 본인 구술을 /convert-note로 분해하여 생성.*

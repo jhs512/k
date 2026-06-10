@@ -1,0 +1,40 @@
+---
+id: decision-jang-test-strategy
+title: 테스트 전략 — 메모리 DB에서 실제 HTTP 콜 후 트랜잭션 롤백
+type: decision
+namespace: personal
+visibility: public
+summary: 테스트는 H2 메모리 DB 위에서 실제 HTTP 요청을 날리고, 각 테스트 후 트랜잭션 롤백으로 상태를 초기화하는 방식을 선호한다.
+auto_inject: false
+applicable_when: 스프링부트 프로젝트의 테스트 코드를 작성하거나 테스트 환경을 구성할 때
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: 장희성 (본인 구술)
+staleness_signal: 본인이 단위 테스트 중심이나 Testcontainers 등 다른 테스트 전략을 표준으로 지정하면 갱신
+tags: ["testing", "http-test", "transaction-rollback", "h2-memory", "spring-boot"]
+edges: [
+  {"target": "playbook-jang-springboot-profiles", "type": "depends_on", "weight": 0.8, "note": "test 프로파일의 H2 메모리 모드가 이 전략의 전제"},
+  {"target": "playbook-jang-springboot-setup", "type": "part_of", "weight": 0.7, "note": "표준 세팅의 테스트 단계"}
+]
+related: ["[[playbook-jang-springboot-profiles]]", "[[playbook-jang-springboot-setup]]"]
+source_url: "Empty"
+---
+
+# 테스트 전략 — 메모리 DB에서 실제 HTTP 콜 후 트랜잭션 롤백
+
+## 결정 내용
+
+테스트는 다음 세 요소를 조합한 통합 테스트를 기본으로 한다:
+
+1. **H2 메모리 DB** — `application-test.yml`의 메모리 모드([[playbook-jang-springboot-profiles]]) 사용.
+2. **실제 HTTP 콜** — 컨트롤러 메서드 직접 호출이 아니라 MockMvc 등으로 실제 HTTP 요청/응답 사이클을 검증한다.
+3. **트랜잭션 롤백 초기화** — 각 테스트를 `@Transactional`로 감싸 테스트 종료 시 롤백되어 DB가 깨끗한 상태로 돌아간다.
+
+## 근거
+
+- 실제 HTTP 경로를 타야 시큐리티 필터, 직렬화, 상태 코드까지 한 번에 검증된다 — REST 중심 구조([[decision-jang-rest-over-thymeleaf]])와 일관.
+- 롤백 방식은 별도 정리(cleanup) 코드 없이 테스트 간 격리를 보장하고, 메모리 DB라 속도도 빠르다.
+
+---
+
+*2026-06-10 본인 구술을 /convert-note로 분해하여 생성.*

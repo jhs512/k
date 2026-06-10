@@ -1,0 +1,42 @@
+---
+id: playbook-jang-springboot-profiles
+title: 프로파일 구성 — dev는 H2 파일 모드, test는 H2 메모리 모드
+type: playbook
+namespace: personal
+visibility: public
+summary: application-dev.yml은 H2 파일 모드(데이터 유지), application-test.yml은 H2 메모리 모드(휘발)로 구성한다.
+auto_inject: false
+applicable_when: 스프링부트 프로젝트의 환경별 설정 파일(dev/test 프로파일)을 구성할 때
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: 장희성 (본인 구술)
+staleness_signal: 본인이 H2 외 DB(MySQL, PostgreSQL 등)를 dev 기본으로 지정하면 갱신
+tags: ["spring-profiles", "h2", "application-yml", "dev-test", "spring-boot"]
+edges: [
+  {"target": "playbook-jang-springboot-setup", "type": "part_of", "weight": 0.9, "note": "표준 세팅의 프로파일 구성 단계"}
+]
+related: ["[[playbook-jang-springboot-setup]]", "[[decision-jang-test-strategy]]"]
+source_url: "Empty"
+---
+
+# 프로파일 구성 — dev는 H2 파일 모드, test는 H2 메모리 모드
+
+## 구성 내용
+
+설정은 yaml 프로파일 파일로 분리한다:
+
+| 파일 | DB 모드 | 목적 |
+|---|---|---|
+| `application-dev.yml` | **H2 파일 모드** (`jdbc:h2:./db_dev` 형태) | 개발 중 재시작해도 데이터 유지 |
+| `application-test.yml` | **H2 메모리 모드** (`jdbc:h2:mem:` 형태) | 테스트마다 깨끗한 DB, 빠른 실행 |
+
+`application.yml`에는 공통 설정과 기본 활성 프로파일(dev)을 둔다.
+
+## 근거
+
+- 개발 모드에서 파일 모드를 쓰면 H2 콘솔로 데이터를 확인하며 강의를 진행할 수 있고, 서버 재시작에도 시연 데이터가 남는다.
+- 테스트는 메모리 모드로 격리해 [[decision-jang-test-strategy]]의 "실제 HTTP 콜 + 트랜잭션 롤백" 전략의 기반을 만든다.
+
+---
+
+*2026-06-10 본인 구술을 /convert-note로 분해하여 생성.*

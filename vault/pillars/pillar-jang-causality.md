@@ -1,0 +1,39 @@
+---
+id: pillar-jang-causality
+title: 인과율 — 뿌린 대로 거둔다
+type: pillar
+namespace: personal
+visibility: public
+summary: 장희성의 핵심 세계관. 인과율을 믿으며, 행동의 결과는 뿌린 대로 돌아온다고 본다. 베풂과 성실함의 근거가 되는 가치 축.
+auto_inject: false
+applicable_when: 가치 판단, 인간관계, 돈·베풂에 관한 의사결정 맥락
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: 장희성 (본인 구술)
+staleness_signal: 본인이 이 신념과 상충하는 가치관을 표명하면 재검토
+tags: ["values", "worldview", "causality", "karma"]
+edges: [
+  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 0.9, "note": "본인이 직접 구술한 신념"},
+  {"target": "pillar-personal-foundation", "type": "related_to", "weight": 0.5, "note": "행동의 결과를 의식하는 태도라는 점에서 신중한 의사결정 원칙과 맞닿음"}
+]
+related: ["[[note-jang-money-attitude]]", "[[contact-jang-heeseong]]"]
+source_url: "Empty"
+---
+
+# 인과율 — 뿌린 대로 거둔다
+
+## 신념의 내용
+
+장희성은 인과율을 믿는다. 좋은 행동이든 나쁜 행동이든 그 결과는 결국 자신에게 돌아온다 — "뿌린 대로 거둔다"는 말로 요약된다.
+
+## 행동에 미치는 영향
+
+이 신념은 단순한 격언이 아니라 실제 행동의 기준으로 작동한다. 대표적으로 돈에 대한 태도([[note-jang-money-attitude]])와 연결된다: 돈 버는 것을 좋아하지만 인색하게 굴지 않는 이유가 바로 이 인과율 신념이다. 베푼 것이 결국 돌아온다고 보기 때문이다.
+
+## 에이전트 활용 지침
+
+사용자의 가치 판단이 개입되는 제안(기부, 가격 책정, 협업 조건 등)을 할 때 이 pillar를 참조하라. 단기 이익만 좇는 제안보다, 장기적 신뢰와 상호성을 고려한 제안이 사용자의 가치관과 일치한다.
+
+---
+
+*2026-06-10 본인 구술을 /convert-note로 분해하여 생성.*

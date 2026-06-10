@@ -1,0 +1,38 @@
+---
+id: decision-jang-security-defaults
+title: 시큐리티 기본 설정 — 전체 허용, H2 콘솔 작동, CSRF 끄기
+type: decision
+namespace: personal
+visibility: public
+summary: 스프링 시큐리티 초기 설정은 모든 요청 허용, H2 콘솔 정상 작동 보장, CSRF 전체 비활성화로 한다.
+auto_inject: false
+applicable_when: 스프링부트 프로젝트에 Spring Security 의존성을 추가한 직후 초기 설정 시
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: 장희성 (본인 구술)
+staleness_signal: 운영 배포용 보안 강화가 필요해지거나 본인이 인증/인가 요구사항을 명시하면 이 기본값은 적용 제외
+tags: ["spring-security", "h2-console", "csrf", "default-config", "spring-boot"]
+edges: [
+  {"target": "playbook-jang-springboot-setup", "type": "part_of", "weight": 0.9, "note": "표준 세팅 플레이북의 시큐리티 단계"}
+]
+related: ["[[playbook-jang-springboot-setup]]"]
+source_url: "Empty"
+---
+
+# 시큐리티 기본 설정 — 전체 허용, H2 콘솔 작동, CSRF 끄기
+
+## 결정 내용
+
+Spring Security를 의존성으로 넣되, 초기(강의/개발) 단계에서는 보안이 개발을 막지 않도록 다음을 기본값으로 한다:
+
+1. **모든 요청 허용** — `permitAll()`. 인증·인가는 강의 진도상 필요해질 때 추가.
+2. **H2 콘솔 정상 작동** — `/h2-console/**` 접근 허용 + frameOptions 해제(sameOrigin 등)로 콘솔 화면이 깨지지 않게 한다.
+3. **CSRF 전체 비활성화** — REST API 중심([[decision-jang-rest-over-thymeleaf]])이므로 CSRF 보호를 끈다.
+
+## 근거
+
+시큐리티 의존성을 추가하는 순간 기본 설정이 모든 요청을 막고 H2 콘솔을 깨뜨린다. 강의 흐름에서 이 마찰을 제거하는 것이 목적이며, 이 설정은 학습/개발용 기본값이지 운영 보안 권장값이 아니다.
+
+---
+
+*2026-06-10 본인 구술을 /convert-note로 분해하여 생성.*
