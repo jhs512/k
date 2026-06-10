@@ -1,36 +1,36 @@
 ---
 id: decision-jang-supabase-cloud-over-local
-title: "Supabase 작업 시 로컬 CLI보다 클라우드 환경을 선호"
+title: "수파베이스 작업 시 로컬 CLI보다 클라우드 환경 선호"
 type: decision
 namespace: personal
-visibility: namespace
-summary: "수파베이스 프로젝트는 로컬 CLI 대신 Supabase 클라우드를 기본 작업 환경으로 사용한다."
+visibility: public
+summary: "수파베이스 프로젝트 작업 시 로컬 CLI 대신 수파베이스 클라우드를 기본 환경으로 사용한다."
 auto_inject: false
-applicable_when: "Supabase를 사용하는 프로젝트 세팅 및 개발 환경 결정 시"
-confidence: 0.95
+applicable_when: "수파베이스 프로젝트를 시작하거나 환경 설정을 결정할 때"
+confidence: 0.9
 verified_at: "06/10/2026"
 verified_by: "jang-heeseong"
-staleness_signal: "로컬 CLI의 기능이 클라우드와 동등해지거나, 오프라인 개발 필요성이 생기면 재검토"
-tags: ["supabase", "cloud", "cli", "환경설정", "데이터베이스"]
+staleness_signal: "수파베이스 로컬 CLI의 기능이나 편의성이 대폭 향상되었을 때"
+tags: ["supabase", "cloud", "database", "workflow", "infrastructure"]
 edges: [
-  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 1.0, "note": "장희성의 개인 기술 선호 결정"},
-  {"target": "pattern-jang-supabase-schema-env", "type": "followed_by", "weight": 0.9, "note": "클라우드 기반이기 때문에 스키마 분리 패턴을 바로 적용 가능"}
+  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 1.0, "note": "장희성의 수파베이스 작업 환경 선호도"},
+  {"target": "decision-jang-supabase-schema-env", "type": "followed_by", "weight": 0.9, "note": "클라우드 환경에서 스키마 기반 환경 분리 전략을 따른다"},
+  {"target": "pattern-jang-supabase-members-table", "type": "related_to", "weight": 0.8, "note": "클라우드 환경에서 members 테이블 패턴을 적용한다"}
 ]
-related: ["[[pattern-jang-supabase-schema-env]]", "[[pattern-jang-supabase-members-table]]"]
+related: ["[[수파베이스 스키마 환경 분리]]", "decision-jang-supabase-schema-env"]
 source_url: "Empty"
 ---
 
-# Supabase 작업 시 로컬 CLI보다 클라우드 환경을 선호
+# 수파베이스 작업 시 로컬 CLI보다 클라우드 환경 선호
 
-Supabase 프로젝트를 시작하거나 작업할 때, 로컬 Docker 기반의 Supabase CLI 환경보다 **Supabase 클라우드(supabase.com)**를 기본 작업 공간으로 사용한다.
+수파베이스 작업을 할 때 로컬 CLI(`supabase start` 등)를 사용하는 대신 수파베이스 클라우드 프로젝트를 직접 사용하는 것을 선호한다.
 
-## 결정 근거
+## 이유
 
-- 로컬 CLI는 Docker 설치와 초기 세팅에 시간이 걸리고, 팀 협업 시 환경 차이가 발생할 수 있다.
-- 클라우드 환경은 대시보드에서 스키마, 테이블, RLS 정책, 트리거 등을 시각적으로 관리할 수 있어 생산성이 높다.
-- Supabase 클라우드의 무료 티어로도 개발/테스트 환경을 충분히 운영할 수 있다.
-- 스키마 기반 환경 분리(public/dev/test)를 단일 Supabase 프로젝트 안에서 구현할 수 있다.
+로컬 CLI는 Docker 기반으로 실행되어 환경 설정이 복잡하고, 클라우드와 로컬 간의 동기화 문제가 발생할 수 있다. 클라우드를 직접 사용하면 실제 프로덕션 환경과 동일한 조건에서 작업하고 스키마 기반 환경 분리 전략을 자연스럽게 적용할 수 있다.
 
-## 트레이드오프
+## 적용 방식
 
-로컬 CLI는 완전한 오프라인 작업과 CI/CD 파이프라인 자동화에 유리하지만, 개인 프로젝트나 강의 목적에서는 클라우드의 편의성이 더 크다.
+- 신규 수파베이스 프로젝트는 클라우드에서 직접 생성한다.
+- 로컬 CLI는 특별한 이유가 없으면 사용하지 않는다.
+- 클라우드 단일 프로젝트 안에서 스키마(`public`, `dev`, `test`)로 환경을 분리한다.
