@@ -22,6 +22,7 @@
 | `decision-jang-rest-over-thymeleaf` | 뷰 레이어는 타임리프 같은 서버사이드 템플릿보다 REST API 방식을 선호한다. | 1 |
 | `decision-jang-test-strategy` | 테스트는 H2 메모리 DB 위에서 실제 HTTP 요청을 날리고, 각 테스트 후 트랜잭션 롤백으로 상태를 초기화하는 방식을 선호한다. | 2 |
 | `decision-jang-sql-logging` | 모든 SQL은 포맷팅된 형태로 자세히 출력하고, 바인딩 파라미터와 추출 값까지 로그에 보이게 설정한다. | 1 |
+| `decision-jang-supabase-cloud-over-local` | 수파베이스 프로젝트는 로컬 CLI 대신 Supabase 클라우드를 기본 작업 환경으로 사용한다. | 2 |
 
 ---
 
@@ -60,7 +61,10 @@
 
 ## pattern
 
-*No nodes created yet.*
+| ID | Summary | Edges |
+|---|---|---|
+| `pattern-jang-supabase-schema-env` | 단일 Supabase 프로젝트 안에서 public=production, dev=개발, test=테스트 스키마로 환경을 분리한다. | 3 |
+| `pattern-jang-supabase-members-table` | public 스키마의 거의 모든 테이블이 auth.users 대신 public.members를 참조하며, 두 테이블은 트리거로 동기화한다. | 3 |
 
 ---
 
@@ -136,4 +140,4 @@ When you create a new node:
 
 ---
 
-*Last updated: 06/10/2026 (convert-note: 장희성 프로필 10개 노드 추가)*
+*Last updated: 06/10/2026 (issue-1: Supabase 선호도 노드 3개 추가 — decision 1, pattern 2)*
