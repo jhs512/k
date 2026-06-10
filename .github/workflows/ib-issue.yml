@@ -2,7 +2,7 @@ name: IB Issue Automation
 
 on:
   issues:
-    types: [labeled]
+    types: [opened, edited]
 
 concurrency:
   group: ib-issue
@@ -10,9 +10,9 @@ concurrency:
 
 jobs:
   ib:
-    # 리포 주인이 등록한 이슈에 'ib' 라벨이 (주인에 의해) 달렸을 때만 실행
+    # 리포 주인이 등록한 이슈의 제목이 'ib' 일 때만 실행
     if: >-
-      github.event.label.name == 'ib' &&
+      github.event.issue.title == 'ib' &&
       github.event.issue.user.login == github.repository_owner &&
       github.event.sender.login == github.repository_owner
     runs-on: ubuntu-latest
@@ -37,6 +37,7 @@ jobs:
           plugins: |
             infinite-brain@ib
           claude_args: |
+            --model claude-fable-5
             --allowed-tools "Bash(git:*),Bash(gh:*),Bash(mkdir:*),Bash(ls:*),Read,Write,Edit,Glob,Grep,Skill,TodoWrite"
           prompt: |
             너는 이 리포지토리의 Infinite Brain vault를 관리하는 Knowledge Architect다.
