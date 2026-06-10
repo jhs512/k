@@ -10,13 +10,13 @@ concurrency:
 
 jobs:
   ib:
-    # 리포 주인이 등록한 열린 이슈의 제목이 정확히 'ib' 일 때만 실행
+    # 콜라보레이터 이상(OWNER/MEMBER/COLLABORATOR)이 등록한 열린 이슈의
+    # 제목이 정확히 'ib' 일 때만 실행
     # (처리 후 봇이 제목을 'ib: ...' 로 바꾸고 이슈를 닫으므로 재실행되지 않음)
     if: >-
       github.event.issue.state == 'open' &&
       github.event.issue.title == 'ib' &&
-      github.event.issue.user.login == github.repository_owner &&
-      github.event.sender.login == github.repository_owner
+      contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.issue.author_association)
     runs-on: ubuntu-latest
     permissions:
       contents: write
