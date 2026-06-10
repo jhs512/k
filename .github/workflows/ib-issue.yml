@@ -69,7 +69,10 @@ jobs:
 
             ## 마무리
 
-            8. 수행한 작업 요약(생성/수정한 노드 목록, 병합 결과 또는 답변 내용)을
-               `gh issue comment` 로 이슈에 한국어로 남긴다.
-            9. 작업이 완료되면 `gh issue close ${{ github.event.issue.number }}` 로 이슈를 닫는다.
-               조회성 질문이었다면 답변 코멘트만 남기고 닫는다.
+            8. 작업의 모든 출력(생성/수정한 노드 목록, 병합 결과, 질문에 대한 답변 본문 등)은
+               반드시 `gh issue comment` 로 이슈에 한국어 답변으로 남긴다.
+               조회성 질문이면 답변 전문을 코멘트에 그대로 담는다.
+            9. 수행한 작업 내용에 맞게 이슈 제목을 적절히 다듬어
+               `gh issue edit ${{ github.event.issue.number }} --title "..."` 로 수정한다.
+               (예: 모호한 제목 → 실제 수행 내용을 요약한 명확한 한국어 제목)
+            10. 작업이 완료되면 `gh issue close ${{ github.event.issue.number }}` 로 이슈를 닫는다.
