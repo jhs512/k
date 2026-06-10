@@ -1,0 +1,47 @@
+---
+id: pillar-personal-foundation
+title: 의사결정은 신중하게 내리고 기록으로 남긴다
+type: pillar
+namespace: personal
+visibility: public
+summary: 신중하게 내리고 기록한 의사결정이 즉흥적인 대응보다 장기적으로 더 나은 결과를 만든다는 이 vault의 기초 원칙.
+auto_inject: false
+applicable_when: "Empty"
+confidence: 1.0
+verified_at: 06/10/2026
+verified_by: System Bootstrap
+staleness_signal: 이 vault가 보관(archive) 상태가 되면 historical로 표시
+tags: ["core-philosophy", "decision-making", "knowledge-management"]
+edges: [
+  {"target": "decision-personal-first", "type": "supports", "weight": 0.9, "note": "이 결정 노드는 '신중한 행동을 기록으로 남긴다'는 원칙을 실천한 예시"}
+]
+related: ["[[decision-personal-first]]"]
+source_url: "Empty"
+---
+
+# 의사결정은 신중하게 내리고 기록으로 남긴다
+
+## 이 Pillar가 존재하는 이유
+
+기본 상태의 사고방식은 반응(reaction)이다. 질문이 생기면 즉석에서 답을 내고, 일주일 뒤에는 왜 그렇게 결정했는지 아무도 기억하지 못한다. 맥락은 부패하고, 같은 고민이 끝없이 반복된다.
+
+이 Pillar는 **결정의 이유를 기록하는 시간은 비용이 아니라 레버리지**라고 주장한다. 결정 기록 하나를 쓰는 한계 비용은 작지만, 필요한 순간에 그 기록이 없을 때의 비용은 크다.
+
+## "신중하게"의 의미
+
+신중한 결정이란 다음이 명시된 결정이다:
+
+- **해결하려는 문제** — 표면적 요청이 아니라 근본 필요
+- **검토한 대안** — 무엇을 버렸고 왜 버렸는지
+- **선택 기준** — 어떤 제약과 가치가 선택을 이끌었는지
+- **번복 조건** — 무엇이 발생하면 이 결정을 재검토하는지
+
+신중함은 느림이 아니다. 대부분의 결정에는 5분짜리 기록이면 충분하다. 핵심은 형식이 아니라 추적 가능성이다.
+
+## Vault 운영에 대한 함의
+
+이 vault에서 활동하는 모든 에이전트와 사람은 중요한 행동 전에 decision 노드를 먼저 만들고, `supports` 엣지로 근거가 되는 pillar에 연결하며, `staleness_signal`이 발동하면 해당 노드를 재검토해야 한다.
+
+---
+
+*이 pillar는 06/10/2026 vault 초기 스캐폴딩 과정에서 생성되었다.*
