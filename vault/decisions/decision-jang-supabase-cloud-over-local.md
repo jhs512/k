@@ -1,0 +1,36 @@
+---
+id: decision-jang-supabase-cloud-over-local
+title: "수파베이스 작업 시 로컬 CLI보다 클라우드 환경 선호"
+type: decision
+namespace: personal
+visibility: public
+summary: "수파베이스 프로젝트 작업 시 로컬 CLI 대신 수파베이스 클라우드를 기본 환경으로 사용한다."
+auto_inject: false
+applicable_when: "수파베이스 프로젝트를 시작하거나 환경 설정을 결정할 때"
+confidence: 0.9
+verified_at: "06/10/2026"
+verified_by: "jang-heeseong"
+staleness_signal: "수파베이스 로컬 CLI의 기능이나 편의성이 대폭 향상되었을 때"
+tags: ["supabase", "cloud", "database", "workflow", "infrastructure"]
+edges: [
+  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 1.0, "note": "장희성의 수파베이스 작업 환경 선호도"},
+  {"target": "decision-jang-supabase-schema-env", "type": "followed_by", "weight": 0.9, "note": "클라우드 환경에서 스키마 기반 환경 분리 전략을 따른다"},
+  {"target": "pattern-jang-supabase-members-table", "type": "related_to", "weight": 0.8, "note": "클라우드 환경에서 members 테이블 패턴을 적용한다"}
+]
+related: ["[[수파베이스 스키마 환경 분리]]", "decision-jang-supabase-schema-env"]
+source_url: "Empty"
+---
+
+# 수파베이스 작업 시 로컬 CLI보다 클라우드 환경 선호
+
+수파베이스 작업을 할 때 로컬 CLI(`supabase start` 등)를 사용하는 대신 수파베이스 클라우드 프로젝트를 직접 사용하는 것을 선호한다.
+
+## 이유
+
+로컬 CLI는 Docker 기반으로 실행되어 환경 설정이 복잡하고, 클라우드와 로컬 간의 동기화 문제가 발생할 수 있다. 클라우드를 직접 사용하면 실제 프로덕션 환경과 동일한 조건에서 작업하고 스키마 기반 환경 분리 전략을 자연스럽게 적용할 수 있다.
+
+## 적용 방식
+
+- 신규 수파베이스 프로젝트는 클라우드에서 직접 생성한다.
+- 로컬 CLI는 특별한 이유가 없으면 사용하지 않는다.
+- 클라우드 단일 프로젝트 안에서 스키마(`public`, `dev`, `test`)로 환경을 분리한다.
