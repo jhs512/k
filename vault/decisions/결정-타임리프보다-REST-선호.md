@@ -1,5 +1,5 @@
 ---
-id: decision-jang-rest-over-thymeleaf
+id: 결정-타임리프보다-REST-선호
 title: 타임리프보다 REST API 방식 선호
 type: decision
 namespace: personal
@@ -11,11 +11,11 @@ confidence: 1.0
 verified_at: 06/10/2026
 verified_by: 장희성 (본인 구술)
 staleness_signal: 본인이 특정 프로젝트에서 SSR/타임리프를 명시적으로 요구하면 해당 건은 예외
-tags: ["rest-api", "thymeleaf", "architecture", "spring-boot"]
+tags: ["REST-API", "타임리프", "아키텍처", "스프링부트"]
 edges: [
-  {"target": "playbook-jang-springboot-setup", "type": "part_of", "weight": 0.8, "note": "표준 세팅의 아키텍처 방침"}
+  {"target": "플레이북-스프링부트-표준-세팅", "type": "part_of", "weight": 0.8, "note": "표준 세팅의 아키텍처 방침"}
 ]
-related: ["[[playbook-jang-springboot-setup]]", "[[decision-jang-security-defaults]]"]
+related: ["[[플레이북-스프링부트-표준-세팅]]", "[[결정-시큐리티-기본설정]]"]
 source_url: "Empty"
 ---
 
@@ -28,7 +28,7 @@ source_url: "Empty"
 ## 함의
 
 - 컨트롤러 예제는 `@Controller` + 템플릿이 아니라 `@RestController` 기준으로 작성한다.
-- CSRF를 끄는 결정([[decision-jang-security-defaults]])과 일관된다 — 세션 기반 폼 제출이 아닌 API 중심이기 때문.
+- CSRF를 끄는 결정([[결정-시큐리티-기본설정]])과 일관된다 — 세션 기반 폼 제출이 아닌 API 중심이기 때문.
 - 강의 예제·과제 코드 생성 시 타임리프 의존성은 기본 포함하지 않는다.
 
 ---

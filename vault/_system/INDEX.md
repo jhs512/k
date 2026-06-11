@@ -1,6 +1,6 @@
-# Knowledge Graph Vault — Master Index
+# 지식 그래프 Vault — 마스터 인덱스
 
-> **Entry point for AI agents.** This index lists every node in the vault, grouped by type, with summary and edge count for rapid scanning.
+> **AI 에이전트의 진입점.** 이 인덱스는 vault의 모든 노드를 타입별로 묶어 summary와 엣지 수와 함께 나열한다. 빠른 스캔용.
 
 ---
 
@@ -8,8 +8,8 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `pillar-personal-foundation` | 신중하게 내리고 기록한 의사결정이 즉흥적인 대응보다 장기적으로 더 나은 결과를 만든다는 이 vault의 기초 원칙. | 1 |
-| `pillar-jang-causality` | 장희성의 핵심 세계관. 인과율을 믿으며, 행동의 결과는 뿌린 대로 돌아온다고 본다. 베풂과 성실함의 근거가 되는 가치 축. | 2 |
+| `기둥-신중한-의사결정-기록` | 신중하게 내리고 기록한 의사결정이 즉흥적인 대응보다 장기적으로 더 나은 결과를 만든다는 이 vault의 기초 원칙. | 1 |
+| `기둥-인과율-신념` | 장희성의 핵심 세계관. 인과율을 믿으며, 행동의 결과는 뿌린 대로 돌아온다고 본다. 베풂과 성실함의 근거가 되는 가치 축. | 2 |
 
 ---
 
@@ -17,25 +17,25 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `decision-personal-first` | 모호한 문제에 시간 압박이 있을 때는, 되돌릴 수 있는 행동을 기본값으로 선택해 추진력을 유지하면서 선택지를 보존한다. | 1 |
-| `decision-jang-security-defaults` | 스프링 시큐리티 초기 설정은 모든 요청 허용, H2 콘솔 정상 작동 보장, CSRF 전체 비활성화로 한다. | 1 |
-| `decision-jang-rest-over-thymeleaf` | 뷰 레이어는 타임리프 같은 서버사이드 템플릿보다 REST API 방식을 선호한다. | 1 |
-| `decision-jang-test-strategy` | 테스트는 H2 메모리 DB 위에서 실제 HTTP 요청을 날리고, 각 테스트 후 트랜잭션 롤백으로 상태를 초기화하는 방식을 선호한다. | 2 |
-| `decision-jang-sql-logging` | 모든 SQL은 포맷팅된 형태로 자세히 출력하고, 바인딩 파라미터와 추출 값까지 로그에 보이게 설정한다. | 1 |
-| `decision-jang-supabase-cloud-over-local` | 수파베이스 프로젝트 작업 시 로컬 CLI 대신 수파베이스 클라우드를 기본 환경으로 사용한다. | 3 |
-| `decision-jang-supabase-schema-env` | 단일 수파베이스 클라우드 프로젝트에서 스키마를 이용해 public=production, dev=dev, test=test 로 환경을 분리한다. | 3 |
+| `결정-되돌릴-수-있는-행동-우선` | 모호한 문제에 시간 압박이 있을 때는, 되돌릴 수 있는 행동을 기본값으로 선택해 추진력을 유지하면서 선택지를 보존한다. | 1 |
+| `결정-시큐리티-기본설정` | 스프링 시큐리티 초기 설정은 모든 요청 허용, H2 콘솔 정상 작동 보장, CSRF 전체 비활성화로 한다. | 1 |
+| `결정-타임리프보다-REST-선호` | 뷰 레이어는 타임리프 같은 서버사이드 템플릿보다 REST API 방식을 선호한다. | 1 |
+| `결정-테스트-전략` | 테스트는 H2 메모리 DB 위에서 실제 HTTP 요청을 날리고, 각 테스트 후 트랜잭션 롤백으로 상태를 초기화하는 방식을 선호한다. | 2 |
+| `결정-SQL-상세-로깅` | 모든 SQL은 포맷팅된 형태로 자세히 출력하고, 바인딩 파라미터와 추출 값까지 로그에 보이게 설정한다. | 1 |
+| `결정-수파베이스-클라우드-우선` | 수파베이스 프로젝트 작업 시 로컬 CLI 대신 수파베이스 클라우드를 기본 환경으로 사용한다. | 3 |
+| `결정-수파베이스-스키마-환경분리` | 단일 수파베이스 클라우드 프로젝트에서 스키마를 이용해 public=production, dev=dev, test=test 로 환경을 분리한다. | 3 |
 
 ---
 
 ## concept
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## question
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
@@ -43,20 +43,20 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `playbook-jang-springboot-setup` | 장희성의 스프링부트 프로젝트 초기 세팅 표준. yaml 설정, 최신 안정 버전, JDK 25+, Group com / Artifact back, Gradle KTS, 필수 의존성 목록 포함. | 3 |
-| `playbook-jang-springboot-profiles` | application-dev.yml은 H2 파일 모드(데이터 유지), application-test.yml은 H2 메모리 모드(휘발)로 구성한다. | 1 |
+| `플레이북-스프링부트-표준-세팅` | 장희성의 스프링부트 프로젝트 초기 세팅 표준. yaml 설정, 최신 안정 버전, JDK 25+, Group com / Artifact back, Gradle KTS, 필수 의존성 목록 포함. | 3 |
+| `플레이북-스프링부트-프로파일-구성` | application-dev.yml은 H2 파일 모드(데이터 유지), application-test.yml은 H2 메모리 모드(휘발)로 구성한다. | 1 |
 
 ---
 
 ## task
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## event
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
@@ -64,31 +64,31 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `pattern-jang-supabase-members-table` | public 스키마의 모든 테이블은 auth.users 대신 public.members에 의존하도록 설계하고, auth.users와 public.members 간 동기화는 트리거로 처리한다. | 3 |
+| `패턴-수파베이스-members-테이블` | public 스키마의 모든 테이블은 auth.users 대신 public.members에 의존하도록 설계하고, auth.users와 public.members 간 동기화는 트리거로 처리한다. | 3 |
 
 ---
 
 ## hypothesis
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## fact
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## source
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## bookmark
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
@@ -96,8 +96,8 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `note-jang-money-attitude` | 장희성은 돈 버는 것을 좋아하지만 인색하지는 않다. 베풂은 인과율 신념(뿌린 대로 거둔다)에서 비롯된다. | 2 |
-| `note-jang-tastes` | 장희성은 풋살과 한식을 좋아하고, 대중문화(연예·트렌드)에는 관심이 없다. | 1 |
+| `노트-돈에-대한-태도` | 장희성은 돈 버는 것을 좋아하지만 인색하지는 않다. 베풂은 인과율 신념(뿌린 대로 거둔다)에서 비롯된다. | 2 |
+| `노트-취향과-관심사` | 장희성은 풋살과 한식을 좋아하고, 대중문화(연예·트렌드)에는 관심이 없다. | 1 |
 
 ---
 
@@ -105,39 +105,39 @@
 
 | ID | Summary | Edges |
 |---|---|---|
-| `contact-jang-heeseong` | 1986년생 한국 남성. IT 강사로 스프링부트 강의를 주력으로 한다. 이 vault의 소유자이자 모든 personal 노드의 1차 저자. | 3 |
+| `연락처-장희성` | 1986년생 한국 남성. IT 강사로 스프링부트 강의를 주력으로 한다. 이 vault의 소유자이자 모든 personal 노드의 1차 저자. | 3 |
 
 ---
 
 ## reference
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## custom
 
-*No nodes created yet.*
+*아직 생성된 노드 없음.*
 
 ---
 
 ## log
 
-> Log nodes are not indexed here. They live in `logs/` and are self-contained. To review recent operations, scan `logs/` directly.
+> 로그 노드는 여기에 인덱싱하지 않는다. `logs/`에 자기완결적으로 존재한다. 최근 작업을 확인하려면 `logs/`를 직접 훑을 것.
 
 ---
 
-## Adding New Nodes
+## 새 노드 추가하기
 
-When you create a new node:
+새 노드를 만들 때:
 
-1. Add a frontmatter block with all required fields per `_system/FRONTMATTER-SCHEMA.md`.
-2. Assign a unique `id` in `type-slug` format.
-3. Populate `edges` with at least one relationship to another node.
-4. Update this index by inserting a row into the appropriate table.
-5. Use `related` for informal wikilinks that don't need a formal edge.
-6. `log` nodes are never added to this index — they are self-contained in `logs/`.
+1. `_system/FRONTMATTER-SCHEMA.md`에 따라 모든 필수 필드를 가진 프론트매터 블록을 추가한다.
+2. `타입-슬러그` 형식의 유일한 `id`를 부여한다.
+3. 다른 노드와의 관계를 최소 1개 담아 `edges`를 채운다.
+4. 해당 타입의 표에 행을 추가하여 이 인덱스를 갱신한다.
+5. 정식 엣지까지는 필요 없는 가벼운 위키링크에는 `related`를 사용한다.
+6. `log` 노드는 절대 이 인덱스에 추가하지 않는다 — `logs/`에 자기완결적으로 존재한다.
 
 ---
 
-*Last updated: 06/10/2026 (issue #1: 수파베이스 작업 선호도 노드 3개 추가 — decision×2, pattern×1)*
+*최종 갱신: 06/11/2026 (vault 전체 한글화 — 노드 파일명·id·태그 한글화, _system 문서 번역)*

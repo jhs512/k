@@ -1,5 +1,5 @@
 ---
-id: pattern-jang-supabase-members-table
+id: 패턴-수파베이스-members-테이블
 title: "수파베이스 public.members 테이블 중심 아키텍처 + auth.users 트리거 동기화"
 type: pattern
 namespace: personal
@@ -9,15 +9,15 @@ auto_inject: false
 applicable_when: "수파베이스 프로젝트에서 사용자 참조 테이블 및 FK 설계를 결정할 때"
 confidence: 0.9
 verified_at: "06/10/2026"
-verified_by: "jang-heeseong"
+verified_by: "장희성"
 staleness_signal: "수파베이스 Auth 구조가 크게 변경되거나 public.members 추상화 방식이 비효율적으로 판명될 때"
-tags: ["supabase", "postgresql", "members", "auth", "trigger", "foreign-key", "architecture"]
+tags: ["수파베이스", "PostgreSQL", "members", "인증", "트리거", "외래키", "아키텍처"]
 edges: [
-  {"target": "contact-jang-heeseong", "type": "authored_by", "weight": 1.0, "note": "장희성의 수파베이스 사용자 테이블 설계 패턴"},
-  {"target": "decision-jang-supabase-cloud-over-local", "type": "related_to", "weight": 0.8, "note": "클라우드 환경에서 이 패턴을 적용한다"},
-  {"target": "decision-jang-supabase-schema-env", "type": "related_to", "weight": 0.8, "note": "각 스키마(public/dev/test)에서 동일한 members 패턴을 사용한다"}
+  {"target": "연락처-장희성", "type": "authored_by", "weight": 1.0, "note": "장희성의 수파베이스 사용자 테이블 설계 패턴"},
+  {"target": "결정-수파베이스-클라우드-우선", "type": "related_to", "weight": 0.8, "note": "클라우드 환경에서 이 패턴을 적용한다"},
+  {"target": "결정-수파베이스-스키마-환경분리", "type": "related_to", "weight": 0.8, "note": "각 스키마(public/dev/test)에서 동일한 members 패턴을 사용한다"}
 ]
-related: ["[[수파베이스 클라우드 환경 선호]]", "decision-jang-supabase-cloud-over-local", "decision-jang-supabase-schema-env"]
+related: ["[[수파베이스 클라우드 환경 선호]]", "결정-수파베이스-클라우드-우선", "결정-수파베이스-스키마-환경분리"]
 source_url: "Empty"
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: decision-jang-sql-logging
+id: 결정-SQL-상세-로깅
 title: SQL 로깅 — 예쁘게 포맷하고 바인딩 파라미터까지 출력
 type: decision
 namespace: personal
@@ -11,11 +11,11 @@ confidence: 0.95
 verified_at: 06/10/2026
 verified_by: 장희성 (본인 구술)
 staleness_signal: 운영 환경 로그 정책이 별도로 정해지거나 본인이 로깅 수준 변경을 지시하면 갱신
-tags: ["sql-logging", "jpa", "hibernate", "format-sql", "binding-parameters", "spring-boot"]
+tags: ["SQL-로깅", "JPA", "하이버네이트", "SQL-포맷", "바인딩-파라미터", "스프링부트"]
 edges: [
-  {"target": "playbook-jang-springboot-setup", "type": "part_of", "weight": 0.8, "note": "표준 세팅의 로깅 설정 단계"}
+  {"target": "플레이북-스프링부트-표준-세팅", "type": "part_of", "weight": 0.8, "note": "표준 세팅의 로깅 설정 단계"}
 ]
-related: ["[[playbook-jang-springboot-setup]]", "[[playbook-jang-springboot-profiles]]"]
+related: ["[[플레이북-스프링부트-표준-세팅]]", "[[플레이북-스프링부트-프로파일-구성]]"]
 source_url: "Empty"
 ---
 
@@ -31,7 +31,7 @@ JPA/하이버네이트가 실행하는 **모든 SQL을 자세히, 보기 좋게*
 
 ## 근거
 
-강의에서 JPA가 실제로 어떤 SQL을 어떤 값으로 실행하는지 학생이 눈으로 확인하는 것이 핵심 학습 포인트다. dev/test 프로파일([[playbook-jang-springboot-profiles]]) 양쪽에 적용한다.
+강의에서 JPA가 실제로 어떤 SQL을 어떤 값으로 실행하는지 학생이 눈으로 확인하는 것이 핵심 학습 포인트다. dev/test 프로파일([[플레이북-스프링부트-프로파일-구성]]) 양쪽에 적용한다.
 
 ---
 

@@ -4,13 +4,13 @@ title: "{{title}}"
 type: 
 namespace: 
 visibility: namespace
-summary: "1-2 sentences for AI scanning."
+summary: "AI 스캔용 1-2문장."
 auto_inject: false
 applicable_when: "Empty"
 confidence: 
 verified_at: "Empty"
 verified_by: "Empty"
-staleness_signal: "If this condition is met, re-evaluate this node"
+staleness_signal: "이 조건이 충족되면 이 노드를 재평가"
 tags: []
 edges: []
 related: []
@@ -19,4 +19,4 @@ source_url: "Empty"
 
 # {{title}}
 
-*(Atomic content here. 50-300 words. Straightforward for humans and AIs.)*
+*(원자적 내용을 여기에. 50-300단어. 사람과 AI 모두에게 명료하게.)*
